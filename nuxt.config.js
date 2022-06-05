@@ -35,10 +35,22 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
+    ['@nuxt/typescript-build',{
+      typeCheck: true,
+      ignoreNotFoundWarnings: true
+    }],
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
   ],
+
+  loaders: {
+    ts: {
+      silent: true
+    },
+    tsx: {
+      silent: true
+    }
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
